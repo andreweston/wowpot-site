@@ -234,6 +234,10 @@ footer{
 
 <body>
 
+<div id="jackpotTicker" style="font-size:28px;font-weight:bold;margin:20px;">
+Loading live jackpot...
+</div>
+
 <header>
   <div class="site-header">
     <div class="logo">Wowpot.org</div>
@@ -372,5 +376,26 @@ function toggleMenu() {
 }
 </script>
 
+<script>
+let currentJackpot = 0;
+
+fetch("/api/jackpot")
+  .then(res => res.json())
+  .then(data => {
+    currentJackpot = parseFloat(data.jackpot.replace(/,/g,""));
+    updateTicker();
+    setInterval(increaseTicker,1000);
+  });
+
+function updateTicker(){
+  document.getElementById("jackpotTicker").innerText =
+    "$" + currentJackpot.toLocaleString(undefined,{minimumFractionDigits:2});
+}
+
+function increaseTicker(){
+  currentJackpot += 0.05;
+  updateTicker();
+}
+</script>
 </body>
 </html>
