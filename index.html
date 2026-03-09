@@ -234,6 +234,92 @@ footer{
 0% { transform:translateX(-100%); }
 100% { transform:translateX(100%); }
 }
+
+/* jackpot box */
+
+.jackpot-box{
+position:relative;
+border-radius:14px;
+margin:24px 0;
+overflow:hidden;
+box-shadow:0 10px 26px rgba(0,0,0,.25);
+background:linear-gradient(135deg,#0a0a0a,#141414);
+}
+
+.jackpot-bg{
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 20% 30%,rgba(0,160,255,.28),transparent 40%),
+radial-gradient(circle at 80% 70%,rgba(255,0,200,.24),transparent 40%),
+radial-gradient(circle at 50% 50%,rgba(255,200,0,.20),transparent 55%);
+opacity:.95;
+}
+
+.jackpot-content{
+position:relative;
+padding:30px;
+text-align:center;
+}
+
+/* label */
+
+.jackpot-label{
+font-size:13px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#fff;
+opacity:.85;
+margin-bottom:10px;
+}
+
+/* amount */
+
+.jackpot-amount{
+font-size:42px;
+font-weight:800;
+background:linear-gradient(180deg,#ffe27a,#ffb300,#ffd700);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+text-shadow:0 4px 12px rgba(0,0,0,.6);
+animation:jackpotPulse 2.6s ease-in-out infinite;
+}
+
+/* sub */
+
+.jackpot-sub{
+font-size:12px;
+margin-top:6px;
+color:#ddd;
+opacity:.85;
+}
+
+/* glow animation */
+
+@keyframes jackpotPulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.02)}
+100%{transform:scale(1)}
+}
+
+/* mobile */
+
+@media (max-width:768px){
+
+.jackpot-content{
+padding:22px;
+}
+
+.jackpot-amount{
+font-size:34px;
+}
+
+.jackpot-label{
+font-size:12px;
+letter-spacing:1.5px;
+}
+
+}
 </style>
 </head>
 
@@ -258,33 +344,7 @@ radial-gradient(circle at 50% 50%,rgba(255,200,0,.18),transparent 55%);
 opacity:.9;
 "></div>
 
-<div style="
-position:relative;
-padding:28px;
-text-align:center;
-">
-
-<div style="
-font-size:13px;
-letter-spacing:2px;
-text-transform:uppercase;
-color:#fff;
-opacity:.8;
-margin-bottom:8px;
-">
-🔥 LIVE WOWPOT PROGRESSIVE JACKPOT
-</div>
-
-<div id="jackpotTicker" style="
-font-size:40px;
-font-weight:800;
-background:linear-gradient(180deg,#ffe27a,#ffb300,#ffd700);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-text-shadow:0 3px 10px rgba(0,0,0,.6);
-">
-Loading...
-</div>
+v
 
 <div style="
 font-size:12px;
