@@ -358,7 +358,7 @@ Stand a chance to win this jackpot for as little as a 10c bet
 
 <p>The WowPot Progressive Jackpot is one of the largest online jackpots, starting with a seed amount of $2,000,000. Each time players spin one of the games on the WowPot network, a small percentage of every bet contributes to the jackpot total.</p>
 
-<p>Because so many casinos offer these games worldwide, a huge number of players are constantly contributing to the pool, causing it to grow quickly. That is why the jackpot amount is currently <strong id="liveAmountInline">loading...</strong>.</p>
+<p>Because so many casinos offer these games worldwide, a huge number of players are constantly contributing to the pool, causing it to grow quickly. That is why the jackpot amount is currently <strong id="liveAmountInline">loading...</strong>!</p>
 
 <p>Once the jackpot is randomly won by a lucky player, it resets back to $2,000,000 and begins growing again.</p>
 
@@ -726,8 +726,11 @@ fetch("/api/jackpot")
   });
 
 function updateTicker(){
-  document.getElementById("jackpotTicker").innerText =
-    "$" + currentJackpot.toLocaleString(undefined,{minimumFractionDigits:2});
+  let formatted = "$" + currentJackpot.toLocaleString(undefined,{minimumFractionDigits:2});
+  document.getElementById("jackpotTicker").innerText = formatted;
+
+  let inline = document.getElementById("liveAmountInline");
+  if(inline){ inline.innerText = formatted; }
 }
 
 function increaseTicker(){
