@@ -316,6 +316,31 @@ footer{
     display:block !important;
   }
 }
+
+.jump-nav{
+display:flex;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
+margin:20px 0 10px 0;
+}
+
+.jump-nav a{
+padding:10px 16px;
+background:#ffffff;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+color:#111;
+border:1px solid #e6e6e6;
+transition:all .2s ease;
+}
+
+.jump-nav a:hover{
+background:#0073e6;
+color:#fff;
+border-color:#0073e6;
+}
 </style>
 </head>
 
@@ -354,7 +379,16 @@ Stand a chance to win this jackpot for as little as a 10c bet
 
   <section>
 
-<h2>What is the WowPot Progressive Jackpot?</h2>
+  <div class="jump-nav">
+
+<a href="#what-is">What is WowPot</a>
+<a href="#biggest-win">Biggest Win</a>
+<a href="#games">All Games</a>
+<a href="#top-picks">Where to Play</a>
+
+</div>
+  
+<h2 id="what-is">What is the WowPot Progressive Jackpot?</h2>
 
 <p>The WowPot Progressive Jackpot is one of the largest online jackpots, starting with a seed amount of $2,000,000. Each time players spin one of the games on the WowPot network, a small percentage of every bet contributes to the jackpot total.</p>
 
@@ -418,7 +452,7 @@ Stand a chance to win this jackpot for as little as a 10c bet
 </header>
 
 <section id="games">
-  <h2>All WowPot Jackpot Games</h2>
+  <h2 id="games">All WowPot Jackpot Games</h2>
 
   <p>The WowPot progressive jackpot network powers a focused group of slot titles developed under Microgaming and Games Global. While the jackpot is shared across games, each title differs significantly in volatility, mechanics, and player appeal.</p>
 
